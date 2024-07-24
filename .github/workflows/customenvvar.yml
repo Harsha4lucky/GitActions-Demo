@@ -19,8 +19,8 @@ jobs:
             - name: Print the values of env variables
               run:
                 echo "$Greeting $First_Name. Today is $DAY_OF_WEEK"
-                echo testvar $testvar
-                echo testvar ${{ env.testvar }}
+                echo "testvar $testvar"
+                echo "testvar ${{ env.testvar }}"
               env:
                 First_Name: Student
                 testvar: sampleval3
