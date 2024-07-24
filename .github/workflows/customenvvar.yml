@@ -1,0 +1,28 @@
+name: Custom Environment Variables
+
+on:
+    workflow_dispatch: 
+
+env:
+    DAY_OF_WEEK: Funday
+    testvar: sampleval-1
+
+jobs:
+    mainjob:
+        name: Print the env vars
+        runs-on: windows-latest
+
+        env:
+            Greeting: Hello
+            testvar: sampleval-2
+        steps:
+            - name: Print the values of env variables
+              run:
+                echo "$Greeting $First_Name. Today is $DAY_OF_WEEK"
+                echo testvar $testvar
+                echo testvar ${{ env.testvar }}
+              env:
+                First_Name: Student
+                testvar: sampleval3
+             
+             
